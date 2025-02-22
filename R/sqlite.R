@@ -54,7 +54,7 @@ get_sqlite_page <- function(con, params, tbl) {
 
 # Get the total record count in tbl
 get_sqlite_count <- function(con, tbl) {
-    query <- glue::glue_sql("SELECT COUNT (*) AS n FROM {tbl}", .con = con)
+    query <- glue::glue_sql("SELECT COUNT (*) AS n FROM {`tbl`}", .con = con)
     result <- DBI::dbGetQuery(con, query)
     result$n
 }
